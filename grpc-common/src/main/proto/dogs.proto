@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package guru.qa.grpc.dogs;
+
+option java_multiple_files = true;
+option java_package = "com.qa.grpc.dogs";
+option java_outer_classname = "DogsProto";
+
+service DogsService {
+  rpc GetAllDogs(google.protobuf.Empty) returns (ListDogsResponse);
+}
+
+message ListDogsResponse {
+  repeated Dog dogs = 1;
+}
+
+message Dog {
+  string name = 1;
+  string personal_id = 2;
+  string owner = 3;
+  string breed = 4;
+}
