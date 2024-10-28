@@ -10,15 +10,36 @@ option java_outer_classname = "DogsProto";
 
 service DogsService {
   rpc GetAllDogs(google.protobuf.Empty) returns (ListDogsResponse);
+  rpc CreateDog(CreateDogRequest) returns (DogResponse);
+  rpc UpdateDog(UpdateDogRequest) returns (DogResponse);
+  rpc GetDog(GetDogRequest) returns (DogResponse);
+
+
 }
 
 message ListDogsResponse {
-  repeated Dog dogs = 1;
+  repeated DogResponse dogs = 1;
 }
 
-message Dog {
+message DogResponse {
   string name = 1;
   string personal_id = 2;
   string owner = 3;
   string breed = 4;
+}
+
+message CreateDogRequest {
+  string name = 1;
+  string personal_id = 2;
+  string owner = 3;
+  string breed = 4;
+}
+
+message UpdateDogRequest {
+  bytes id = 1;
+  CreateDogRequest dogData = 2;
+}
+
+message GetDogRequest {
+  bytes id = 1;
 }

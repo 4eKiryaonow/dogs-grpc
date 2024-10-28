@@ -1,5 +1,6 @@
 package com.qa.dogs.data;
 
+import com.qa.grpc.dogs.CreateDogRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

@@ -22,7 +22,7 @@ public class BreedEntity implements Serializable {
     private UUID id;
 
     @Column(name = "breed", nullable = false)
-    private String name;
+    private String breed;
 
     @Override
     public final boolean equals(Object o) {
