@@ -13,8 +13,7 @@ service DogsService {
   rpc CreateDog(CreateDogRequest) returns (DogResponse);
   rpc UpdateDog(UpdateDogRequest) returns (DogResponse);
   rpc GetDog(GetDogRequest) returns (DogResponse);
-
-
+  rpc DeleteDog(GetDogRequest) returns (google.protobuf.Empty);
 }
 
 message ListDogsResponse {
@@ -26,6 +25,7 @@ message DogResponse {
   string personal_id = 2;
   string owner = 3;
   string breed = 4;
+  bytes id = 5;
 }
 
 message CreateDogRequest {
